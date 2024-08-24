@@ -1,0 +1,64 @@
+#proizvod {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 10px 0 100px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+#proizvod > img {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    transition: .4s;
+    flex-shrink: 1;
+}
+
+.velika-slika {
+    width: 800px !important; /*u slucaju konflikta !important daje prednost*/
+    height: 800px !important;
+}
+
+#proizvod-desno {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--glavni-font);
+}
+
+#proizvod-naziv {
+    font-size: 40px;
+}
+
+#proizvod-cena {
+    font-size: 24px;
+    font-style: italic;
+}
+
+#proizvod-info {
+    font-size: 20px;
+    width: 800px;
+}
+
+p {
+    margin: 0;
+}
+
+#red {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#red-desno {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+#kvantitet {
+    width: 80px;
+    font-size: 18px;
+    margin-left: 15px;
+}

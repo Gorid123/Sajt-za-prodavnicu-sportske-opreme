@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kupujte sportske steznike za laktove, kolena, bandaze, i pojaseve po najboljim cenama.">
+    <title>Sportska oprema</title>
+    <link rel="shortcut icon" href="slike/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="stilovi.css">
+</head>
+
+<body>
+    <div id="meni">
+        <a href="index.html">
+            <img src="slike/logo.png" draggable="false">
+        </a>
+        <a href="index.html">
+            <div class="meni-predmet">Početna</div>
+        </a>
+        <a href="proizvodi.html">
+            <div class="meni-predmet">Proizvodi</div>
+        </a>
+        <a href="steznici_za_laktove.html">
+            <div class="meni-predmet">Steznici za laktove</div>
+        </a>
+        <a href="steznici_za_kolena.html">
+            <div class="meni-predmet">Steznici za kolena</div>
+        </a>
+        <a href="bandaze_za_ruke.html">
+            <div class="meni-predmet">Bandaže za ruke</div>
+        </a>
+        <a href="pojasevi.html">
+            <div class="meni-predmet">Pojasevi</div>
+        </a>
+        <a href="o_nama.html">
+            <div class="meni-predmet">O nama</div>
+        </a>
+        <a href="kontakt.html">
+            <div class="meni-predmet meni-predmet-selektovano">Kontakt</div>
+        </a>
+        <div id="tema-slajder">
+            <div id="tema-slajder-krug"></div>
+        </div>
+    </div>
+
+    <h1>Kontakt</h1>
+
+    <div id="forma">
+        <input type="text" name="email" id="email" placeholder="email">
+        <textarea id="poruka" placeholder="poruka"></textarea>
+        <button id="posaji-dugme">Pošalji</button>
+    </div>
+
+</body>
+<script src="tema.js"></script>
+<script>
+    const email_element = document.getElementById('email')
+    const poruka_element = document.getElementById('poruka')
+    document.getElementById('posaji-dugme').onclick = () => {
+        if (email_element.value == '' || poruka_element.value == '') return
+        email_element.value = poruka_element.value = ''
+        alert('Poslato')
+    }
+</script>
+
+</html>

@@ -1,0 +1,315 @@
+:root {
+    /*varijable za laksu organizaciju*/
+    --svetlo: #EAEAEA;
+    --mracno: #373737;
+    --predmet-preko: lightgray;
+    --predmet-preko-mracno: #242424;
+    --glavni-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    /*da prvi element moze da pocinje od kooordinate 0,0 tj gornje leve ivice*/
+    background-color: var(--svetlo);
+    transition: .2s;
+}
+
+.mracna-pozadina {
+    background-color: var(--mracno);
+    color: white;
+}
+
+#meni {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*vertialno poravnanje*/
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    user-select: none;
+    /*da korisnik ne moze da vuce i selektuje elemente -> ne izgleda lepo*/
+    position: relative;
+}
+
+#meni a {
+    flex-shrink: 0;
+}
+
+@media (max-width: 750px) { 
+    #o-nama-tekst, #forma {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 1583px) {
+    #meni {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #meni>a:link:first-child {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .meni-predmet {
+        margin-bottom: 20px;
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 1719px) {
+    #tema-slajder {
+        display: none;
+    }
+}
+
+.meni-predmet {
+    color: var(--svetlo);
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    /*da sva slova budu velika*/
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: all .2s, margin-bottom 0s, font-size 0s;
+}
+
+.meni-predmet-selektovano {
+    box-shadow: 0 0 0 1px var(--svetlo) inset;
+    /*senka koja ide 1px u svim pravcima, iznutra; ne utice na dimenzije*/
+}
+
+.meni-predmet:not(.meni-predmet-selektovano):hover {
+    background-color: var(--svetlo);
+    color: black;
+}
+
+#meni>a:link:first-child {
+    /*> se odnosi na direktnog potomka*/
+    margin-left: 200px;
+    margin-right: 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#predmeti {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.predmet {
+    display: inline-flex;
+    /*flex koji zauzima samo prostor koji mu je neophodan*/
+    flex-direction: column;
+    text-transform: uppercase;
+    align-items: center;
+    /*horizontalno poravnanje*/
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    /*da padding ne utice na dimenzije; inace bi bio visi i siri za 20px*/
+    gap: 10px;
+    /*razmak izmedju dece*/
+    font-family: var(--glavni-font);
+    font-weight: 350;
+    /*debiljina slova*/
+    cursor: pointer;
+    transition: background-color .1s;
+    vertical-align: top;
+    height: 400px;
+}
+
+.predmet>img {
+    transition: transform .4s;
+    border: 1px solid rgb(209, 181, 181);
+}
+
+body.mracna-pozadina .predmet>img {
+    border-color: #121212;
+}
+
+.predmet:hover {
+    background-color: var(--predmet-preko);
+}
+
+body.mracna-pozadina .predmet:hover {
+    background-color: var(--predmet-preko-mracno);
+}
+
+.predmet:active img {
+    /*img ne mora da bude direktan potomak vec samo neki potomak*/
+    transform: scale(.92);
+    /*velicina se menja na 92% od prvobitne*/
+}
+
+.predmet-naziv {
+    font-size: 20px;
+    width: 266px;
+}
+
+.predmet-cena {
+    font-size: 18px;
+    font-style: italic;
+    /*zakrivljenje slova*/
+}
+
+#slajder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+#slajder-slika {
+    width: 30vw;
+    height: 30vw;
+    min-width: 400px;
+    min-height: 400px;
+    background-size: contain;
+    border: 1px solid rgb(209, 181, 181);
+    cursor: pointer;
+    transition: background-image .3s;
+}
+
+body.mracna-pozadina #slajder-slika {
+    border-color: #121212;
+}
+
+#slajder-tacke {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.slajder-tacka {
+    background-color: black;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.slajder-tacka-selektovano {
+    background-color: #5B5B5B;
+}
+
+#slajder-tekst {
+    font-family: var(--glavni-font);
+    font-size: 24px;
+}
+
+#tema-slajder {
+    width: 80px;
+    height: 40px;
+    background-color: #5B5B5B;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .2s;
+    position: absolute;
+    right: 50px;
+    border: 4px solid #5B5B5B;
+}
+
+#tema-slajder-krug {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--svetlo);
+    transition: .2s;
+    position: absolute;
+    left: 0;
+}
+
+#tema-slajder.mracna-tema #tema-slajder-krug {
+    background-color: var(--mracno);
+    left: 40px;
+}
+
+.beztranzicije {
+    transition: none !important;
+}
+
+#eur-rsd {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-family: var(--glavni-font);
+    font-size: 22px;
+}
+
+h1 {
+    font-family: var(--glavni-font);
+    font-size: 64px;
+    text-align: center;
+}
+
+#o-nama-tekst {
+    text-align: justify;
+    font-size: 24px;
+    font-family: var(--glavni-font);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+}
+
+#forma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto 200px auto;
+    gap: 10px;
+}
+
+#forma input,
+#forma textarea {
+    font-family: var(--glavni-font);
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+    min-height: 50px;
+}
+
+button {
+    margin-left: 15px;
+    user-select: none;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background-color .1s;
+}
+
+button:hover {
+    background-color: rgb(204, 188, 188);
+}
+
+#forma button:not(#pogledaj-proizvode) {
+    margin-left: 0;
+    width: 200px;
+}
+
+#forma:has(#pogledaj-proizvode) {
+    margin: 40px auto 50px auto;
+}

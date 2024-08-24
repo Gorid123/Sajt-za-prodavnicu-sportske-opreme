@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kupujte sportske steznike za laktove, kolena, bandaze, i pojaseve po najboljim cenama.">
+    <title>Sportska oprema</title>
+    <link rel="shortcut icon" href="slike/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="stilovi.css">
+</head>
+
+<body>
+    <div id="meni">
+        <a href="index.html">
+            <img src="slike/logo.png" draggable="false">
+        </a>
+        <a href="index.html">
+            <div class="meni-predmet meni-predmet-selektovano">Početna</div>
+        </a>
+        <a href="proizvodi.html">
+            <div class="meni-predmet">Proizvodi</div>
+        </a>
+        <a href="steznici_za_laktove.html">
+            <div class="meni-predmet">Steznici za laktove</div>
+        </a>
+        <a href="steznici_za_kolena.html">
+            <div class="meni-predmet">Steznici za kolena</div>
+        </a>
+        <a href="bandaze_za_ruke.html">
+            <div class="meni-predmet">Bandaže za ruke</div>
+        </a>
+        <a href="pojasevi.html">
+            <div class="meni-predmet">Pojasevi</div>
+        </a>
+        <a href="o_nama.html">
+            <div class="meni-predmet">O nama</div>
+        </a>
+        <a href="kontakt.html">
+            <div class="meni-predmet">Kontakt</div>
+        </a>
+        <div id="tema-slajder">
+            <div id="tema-slajder-krug"></div>
+        </div>
+    </div>
+
+    <h1>Sportska oprema</h1>
+
+    <div id="slajder">
+        <div id="slajder-slika"></div>
+        <div id="slajder-tekst"></div>
+        <div id="slajder-tacke"></div>
+    </div>
+
+    <div id="forma">
+        <button id="pogledaj-proizvode">Proizvodi ></button>
+    </div>
+</body>
+<script src="skript.js"></script>
+<script>
+    PodesiSlajder([
+        { n: 1, i: 0, naziv: 'Steznici za laktove Phantom' },
+        { n: 6, i: 3, naziv: 'Steznici za kolena Phantom' },
+        { n: 9, i: 6, naziv: 'Bandaže za zglobove Phantom' },
+        { n: 5, i: 10, naziv: 'Pojas sa polugom' }
+    ])
+    document.getElementById('pogledaj-proizvode').onclick = () => {
+        window.open('proizvodi.html', '_self')        
+    }
+</script>
+<script src="tema.js"></script>
+</html>
